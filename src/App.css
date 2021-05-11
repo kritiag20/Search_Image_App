@@ -42,14 +42,15 @@ h3{
 .searchInput{
   width: 35rem;
   height: 3rem;
-  padding: 10px;
+  padding: 10px 40px 10px 20px;
   border-radius: 30px;
   outline: none;
   border: none;
   font-size: 16px;
   color: #1F2937;
-  padding-left: 20px;
-  /* border-bottom: 2px solid darkturquoise; */
+}
+.searchIcon{
+  margin-left: -35px;
 }
 .searchText{
   text-transform: capitalize;
@@ -58,7 +59,7 @@ h3{
   margin-left: 140px;
 }
 .bgImg{
-  width: 650px;
+  width: 300px;
   display: flex;
   margin: auto;
 }
@@ -75,21 +76,26 @@ h3{
 }
 .imgSize{
   width: 400px;
-  height: auto;
+  /* height: 100%; */
   display: block;
+  cursor: pointer;
 }
-.overlay{
-  position: absolute; 
-  /* bottom: 0;  */
-  background: rgba(0, 0, 0, 0.5); /* Black see-through */
-  /* width: 100%; */
+.pop{
+  position: absolute;
+    /* background: rgba(0, 0, 0, 0.3); */
   transition: .5s ease;
-  opacity:0;
+  opacity: 0;
   color: white;
-  font-size: 20px;
-  padding: 20px;
-  text-align: center;
+  top: 0;
+  right: 0;
 }
-.imgCont:hover .overlay {
+.imgCont:hover .pop {
   opacity: 1;
+}
+.zoomBtn{
+  color: #fff;
+}
+
+.imghover{
+  cursor: zoom-out;
 }
