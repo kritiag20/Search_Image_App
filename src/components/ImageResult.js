@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import { IconButton, Button, Dialog, DialogActions } from '@material-ui/core';
 // import { GridListTile, GridList, GridListTileBar } from '@material-ui/core';
 import ZoomInIcon from '@material-ui/icons/ZoomIn';
-import Image from '../Icons/searchImage.svg';
+import NotFound from '../Icons/NotFound.svg';
 
-export class ImageResult extends Component {
+class ImageResult extends Component {
 
     constructor(props) {
         super(props)
@@ -30,30 +30,28 @@ export class ImageResult extends Component {
 
         let ImgList
         const images = this.state.imageList
-
+        console.log("images " + this.state.imageList);
         if (images) {
             ImgList = (
                 <div className="displayImg">
                     {images.map(image => (
                         <div className="imgCont" key={image.id}>
-
-                            <img className="imgSize" src={image.webformatURL} alt="" />
-
+                            <img className="imgSize" onClick={() => this.handleOpen(image.largeImageURL)} src={image.webformatURL} alt="" />
                             <div className="pop">
                                 <IconButton onClick={() => this.handleOpen(image.webformatURL)}>
-                                    <ZoomInIcon className="zoomBtn" />
+                                    <ZoomInIcon />
                                 </IconButton>
                             </div>
-
-
+                            <div className="imgTags">
+                                {image.tags}
+                            </div>
                         </div>
                     ))}
-
                 </div>
             )
         }
         else {
-            ImgList = (<img src={Image} alt="" />)
+            ImgList = (<img src={NotFound} alt="" />)
         }
 
         return (
