@@ -21,16 +21,15 @@ class SearchImage extends Component {
     }
 
     onSearch = () => {
-        this.setState(() => {
-            axios
-                .get(
-                    `${this.state.apiUrl}/?key=${this.state.apiKey}&q=${this.state.searchText}&image_type=photo&safesearch=true`
-                )
-                .then(res => this.setState({ result: res.data.hits }))
-                .catch(err => console.log(err))
-        })
+
+        axios
+            .get(
+                `${this.state.apiUrl}/?key=${this.state.apiKey}&q=${this.state.searchText}&image_type=photo&safesearch=true`
+            )
+            .then(res => this.setState({ result: res.data.hits, value: this.state.searchText }))
+            .catch(err => console.log(err))
+
         console.log("searchClicked");
-        this.setState({ value: this.state.searchText })
 
     }
     getText = (e) => {
@@ -70,7 +69,7 @@ class SearchImage extends Component {
 
                 <div>
                     <div className="searchText">{this.state.value}</div>
-                    {this.state.result.length > 0 ? (<ImageResult images={this.state.result} />) :
+                    {this.state.result.length > 0 ? (<ImageResult result={this.state.result} />) :
                         (<img className="bgImg" src={Image} alt="" />)
                     }
                 </div>

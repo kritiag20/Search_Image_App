@@ -11,8 +11,7 @@ class ImageResult extends Component {
 
         this.state = {
             open: false,
-            currentImg: '',
-            imageList: this.props.images
+            currentImg: ''
         }
         this.handleOpen = this.handleOpen.bind(this)
         this.handleClose = this.handleClose.bind(this)
@@ -29,8 +28,8 @@ class ImageResult extends Component {
     render() {
 
         let ImgList
-        const images = this.state.imageList
-        console.log("images " + this.state.imageList);
+        const images = this.props.result
+        console.log(JSON.stringify(images))
         if (images) {
             ImgList = (
                 <div className="displayImg">
