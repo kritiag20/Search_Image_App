@@ -4,7 +4,7 @@ import SearchImage from './components/SearchImage';
 function App() {
   return (
     <div className="App">
-      <SearchImage/>
+      <SearchImage />
     </div>
   );
 }

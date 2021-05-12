@@ -29,18 +29,21 @@ class ImageResult extends Component {
 
         let ImgList
         const images = this.props.result
-        console.log(JSON.stringify(images))
+        console.log("images", images)
         if (images) {
             ImgList = (
                 <div className="displayImg">
                     {images.map(image => (
                         <div className="imgCont" key={image.id}>
-                            <img className="imgSize" onClick={() => this.handleOpen(image.largeImageURL)} src={image.webformatURL} alt="" />
-                            <div className="pop">
-                                <IconButton onClick={() => this.handleOpen(image.webformatURL)}>
-                                    <ZoomInIcon />
-                                </IconButton>
+                            <div className="image">
+                                <img className="imgSize" src={image.webformatURL} alt="" />
+                                <div className="pop">
+                                    <div className="zoomIconCont" onClick={() => this.handleOpen(image.webformatURL)}>
+                                        <ZoomInIcon className="zoomBtn" />
+                                    </div>
+                                </div>
                             </div>
+
                             <div className="imgTags">
                                 {image.tags}
                             </div>

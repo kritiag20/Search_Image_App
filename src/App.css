@@ -75,26 +75,37 @@ h3{
 .imgCont{
   position: relative;
 }
+.image{
+width: 100%;
+height: 85%;
+}
 .imgSize{
-  width: 400px;
-  /* height: 100%; */
+  width: 100%;
+  height: 100%;
   display: block;
   cursor: pointer;
 }
 .pop{
   position: absolute;
-    /* background: rgba(0, 0, 0, 0.3); */
+  background: rgba(255, 255,255, 0.4);
   transition: .5s ease;
   opacity: 0;
   color: white;
-  top: 0;
-  right: 0;
+  top: 0px;
+  right: 0px;
+  height: 85%;
+  /* border-radius: 9px; */
+  width: 100%;
 }
-.imgCont:hover .pop {
+.image:hover .pop {
   opacity: 1;
 }
+.zoomIconCont{
+  padding: 10px;
+}
 .zoomBtn{
-  color: #fff;
+  color: #000;
+  right: 0px;
 }
 
 .imghover{
