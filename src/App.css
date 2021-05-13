@@ -96,16 +96,41 @@ height: 85%;
   height: 85%;
   /* border-radius: 9px; */
   width: 100%;
+  display: flex;
 }
 .image:hover .pop {
   opacity: 1;
 }
 .zoomIconCont{
-  padding: 10px;
+  padding: 5px;
+  top: 10px;
+  right: 10px;
+  height: 32px;
+  border-radius: 8px;
+  width: 33px;
+  position: absolute;
+  background-color: #fff;
 }
+.likeBtn{
+  right: 60px;
+  padding: 5px;
+  top: 10px;
+  /* right: 10px; */
+  height: 32px;
+  border-radius: 8px;
+  width: 33px;
+  position: absolute;
+  /* background-color: #fff; */
+}
+
 .zoomBtn{
   color: #000;
   right: 0px;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+.LikeIcon{
+  color: rgba(221, 48, 48, 0.993);
 }
 
 .imghover{
@@ -115,4 +140,7 @@ height: 85%;
   padding: 20px 0 10px 0;
   text-transform: capitalize;
   word-spacing: 4px;
+}
+.modal{
+  background-color: rgba(0, 0, 0, 0.8);
 }
